@@ -1,0 +1,1901 @@
+/* Estilos generales */
+:root {
+    --primary-color: #578e7e; /* Verde azulado principal */
+    --secondary-color: #f5ecd5; /* Beige claro */
+    --accent-color: #3d3d3d; /* Gris oscuro */
+    --background-color: #fffaec; /* Beige muy claro */
+    --text-color: #3d3d3d; /* Gris oscuro */
+    --light-text: #578e7e; /* Verde azulado */
+    --border-color: #f5ecd5; /* Beige claro */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.8;
+    overflow-x: hidden;
+    background: var(--background-color);
+}
+
+/* Estilos para texto cursivo */
+.cursive-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Mejoras en el contenido principal */
+.main-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--primary-color);
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 2px;
+}
+
+.main-date {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-family: 'Great Vibes', cursive;
+    margin-bottom: 1rem;
+}
+
+/* Mejoras en las secciones */
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 1rem auto 0;
+    border-radius: 5px;
+}
+
+/* Mejoras en las tarjetas */
+.family-card, .message-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.family-card:hover, .message-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.family-card h3, .message-card h3 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Mejoras en el programa */
+.program-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.timeline-item h3 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Sección de mesas de regalos */
+.gift-section {
+    padding: 4rem 2rem;
+    background: var(--secondary-color);
+    text-align: center;
+}
+
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.gift-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.gift-card:hover {
+    transform: translateY(-5px);
+}
+
+.gift-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.gift-card h3 {
+    padding: 1.5rem;
+    color: var(--primary-color);
+    font-family: 'Great Vibes', cursive;
+}
+
+.gift-link {
+    display: block;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.gift-link:hover {
+    background: darken(var(--primary-color), 10%);
+}
+
+/* Sección de videos */
+.videos-section {
+    padding: 4rem 2rem;
+    background: var(--secondary-color);
+    text-align: center;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.video-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card h3 {
+    padding: 1.5rem;
+    color: var(--primary-color);
+    font-family: 'Great Vibes', cursive;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gifts-grid,
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .gift-card img,
+    .video-card iframe {
+        height: 200px;
+    }
+    
+    .gift-card h3,
+    .video-card h3 {
+        padding: 1rem;
+    }
+    
+    .gift-link {
+        padding: 0.8rem;
+    }
+}
+
+/* Estilos generales */
+:root {
+    --primary-color: #578e7e; /* Verde azulado principal */
+    --secondary-color: #f5ecd5; /* Beige claro */
+    --accent-color: #3d3d3d; /* Gris oscuro */
+    --background-color: #fffaec; /* Beige muy claro */
+    --text-color: #3d3d3d; /* Gris oscuro */
+    --light-text: #578e7e; /* Verde azulado */
+    --border-color: #f5ecd5; /* Beige claro */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.invitation-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: visible;
+    position: relative;
+    padding: 2rem;
+}
+
+/* Encabezado y sección principal */
+.header {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+}
+
+.main-section {
+    position: relative;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.main-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.main-img:hover {
+    transform: scale(1.02);
+}
+
+.main-content {
+    margin-top: 2rem;
+}
+
+.main-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--primary-color);
+}
+
+.main-date {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.main-content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    text-align: center;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.main-date {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.main-time {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Sección de familias */
+.families-section {
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.families-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.family-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    text-align: center;
+}
+
+.family-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.parents-images {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.parents-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.parents-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Sección de damas de honor */
+.bridesmaids-section {
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.bridesmaids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.bridesmaid-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    text-align: center;
+}
+
+.bridesmaid-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.bridesmaid-card img:hover {
+    transform: scale(1.05);
+}
+
+/* Sección de testigos */
+.witnesses-section {
+    padding: 3rem 2rem;
+}
+
+.witnesses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.witness-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.witness-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Sección de ubicación */
+.location-section {
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.location-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    text-align: center;
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.location-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.location-card p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.location-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 1rem 0;
+    aspect-ratio: 16/9;
+}
+
+.location-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.location-img:hover {
+    transform: scale(1.05);
+}
+
+#church-map,
+#reception-map {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+/* Botón de mapa */
+.map-button {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: fit-content;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.map-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Sección de programa */
+.program-section {
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.timeline-vertical {
+    position: relative;
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.timeline-content {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    width: 300px;
+    height: 300px;
+    position: relative;
+    text-align: center;
+    margin: 0 2rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-content h3 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.timeline-content p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.timeline-content .timeline-date {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-marker i {
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker i {
+    transform: scale(1.2);
+}
+
+/* Animaciones para la línea del tiempo */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.timeline-item:nth-child(2n) {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(3n) {
+    animation-delay: 0.2s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Sección de menú */
+.menu-section {
+    padding: 3rem 2rem;
+    background: var(--secondary-color);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.menu-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+/* Sección de cuenta regresiva */
+.countdown-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.countdown-container {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.countdown-container h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.countdown-item {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform var(--transition-speed);
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animaciones para la cuenta regresiva */
+.countdown-section {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-section {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animaciones */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Efectos de partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        height: 300px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .main-date {
+        font-size: 1.5rem;
+    }
+
+    .main-time {
+        font-size: 1.2rem;
+    }
+
+    .families-grid,
+    .bridesmaids-grid,
+    .witnesses-grid,
+    .gifts-grid,
+    .videos-grid,
+    .gallery-grid,
+    .messages-grid,
+    .reflections-grid,
+    .dedications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding: 0 1rem;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding: 0 1rem;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+    }
+
+    .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .countdown-number {
+        font-size: 2.5rem;
+    }
+
+    .gallery-images {
+        padding: 1rem 0;
+    }
+
+    .gallery-images img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #confirmation-form {
+        max-width: 100%;
+    }
+}
+
+/* Sección de nuestra historia */
+.love-story-section {
+    width: 100%;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.love-story-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.timeline-item {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-date {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    min-width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.timeline-content {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    padding: 0 1rem;
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.timeline-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para las imágenes de la historia */
+.timeline-image {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Marco decorativo */
+.timeline-image::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+/* Efecto de elevación al pasar el mouse */
+.timeline-image:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .love-story-section {
+        padding: 2rem 1rem;
+    }
+    
+    .timeline-item {
+        max-width: 500px;
+        padding: 1.5rem;
+    }
+    
+    .timeline-image {
+        max-width: 150px;
+    }
+    
+    .timeline-date {
+        font-size: 1.6rem;
+        padding: 0.8rem;
+    }
+    
+    .timeline-content {
+        padding: 0 0.5rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Animaciones al desplazarse */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.invitation-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: visible;
+    position: relative;
+    padding: 2rem;
+}
+
+.invitation-content {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    position: relative;
+}
+
+.section {
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.countdown-container {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.family-card, .message-card {
+    width: 100%;
+    max-width: 100%;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    overflow: visible;
+}
+
+.program-section {
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.timeline-vertical {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
+
+.timeline-item {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.love-story-section {
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
+
+.timeline-item {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.section-title, h2 {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .invitation-container {
+        padding: 1rem;
+    }
+    
+    .section {
+        padding: 1rem;
+    }
+    
+    .countdown-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Sección de música */
+.music-section {
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.music-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.music-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.music-player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+.music-description {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+.music-description h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.music-description p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.music-button {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.music-button i {
+    font-size: 1.5rem;
+}
+
+.music-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.music-button.play {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.music-button.pause {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    display: none;
+}
+
+/* Botón fijo de música */
+.fixed-music-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.music-play {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.music-play:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el reproductor de audio */
+.audio-player {
+    display: none;
+}
+
+.music-description {
+    text-align: center;
+    padding: 2rem;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.music-button {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.music-button i {
+    font-size: 1.5rem;
+}
+
+.music-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.music-button.play {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.music-button.pause {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    display: none;
+}
+
+/* Botón fijo de música */
+.fixed-music-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.music-play {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.music-play:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección de galerías */
+.gallery-section {
+    padding: 4rem 2rem;
+    background: var(--secondary-color);
+    text-align: center;
+}
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .gallery-item img {
+        height: 300px;
+    }
+    
+    .gallery-caption {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Sección de mensajes */
+.messages-section {
+    padding: 3rem 2rem;
+    background: var(--secondary-color);
+}
+
+.messages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.message-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.message-card p {
+    margin-bottom: 1rem;
+}
+
+.author {
+    font-style: italic;
+    color: var(--light-text);
+}
+
+/* Sección de formulario */
+.confirmation-section {
+    padding: 3rem 2rem;
+}
+
+#confirmation-form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #9c2710;
+}
+
+/* Sección de reflexiones */
+.reflections-section {
+    padding: 3rem 2rem;
+    background: var(--secondary-color);
+}
+
+.reflections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.reflection-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.reflection-card p {
+    margin-bottom: 1rem;
+}
+
+.author {
+    font-style: italic;
+    color: var(--light-text);
+}
+
+/* Sección de dedicatorias */
+.dedications-section {
+    padding: 3rem 2rem;
+}
+
+.dedications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.dedication-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Reproductor de música de YouTube */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+}
+
+.youtube-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.youtube-container iframe {
+    border: none;
+    border-radius: 10px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.play-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+    background: rgba(194, 54, 22, 0.1);
+}
+
+.play-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.progress-container {
+    flex: 1;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.time {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.pause-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.pause-btn:hover {
+    background: rgba(194, 54, 22, 0.1);
+}
+
+.pause-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-section {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animaciones */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Efectos de partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        height: 300px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .main-date {
+        font-size: 1.5rem;
+    }
+
+    .main-time {
+        font-size: 1.2rem;
+    }
+
+    .families-grid,
+    .bridesmaids-grid,
+    .witnesses-grid,
+    .gifts-grid,
+    .videos-grid,
+    .gallery-grid,
+    .messages-grid,
+    .reflections-grid,
+    .dedications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding: 0 1rem;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding: 0 1rem;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+    }
+
+    .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .countdown-number {
+        font-size: 2.5rem;
+    }
+
+    .gallery-images {
+        padding: 1rem 0;
+    }
+
+    .gallery-images img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #confirmation-form {
+        max-width: 100%;
+    }
+}
+
+/* Sección de Código de Vestimenta */
+.dress-code-section {
+    padding: 4rem 2rem;
+    background: var(--secondary-color);
+    text-align: center;
+}
+
+.dress-code-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.dress-code-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.dress-code-item:hover {
+    transform: translateY(-5px);
+}
+
+.dress-code-item h3 {
+    color: var(--primary-color);
+    font-family: 'Great Vibes', cursive;
+    margin-bottom: 1.5rem;
+}
+
+.dress-code-item p {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.color-palette {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Sección de Redes Sociales */
+.social-section {
+    padding: 4rem 2rem;
+    background: var(--secondary-color);
+    text-align: center;
+}
+
+.social-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.social-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.social-item:hover {
+    transform: translateY(-5px);
+}
+
+.social-item h3 {
+    color: var(--primary-color);
+    font-family: 'Great Vibes', cursive;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.social-link:hover {
+    background: darken(var(--primary-color), 10%);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dress-code-content,
+    .social-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dress-code-item,
+    .social-item {
+        padding: 1.5rem;
+    }
+    
+    .social-link {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Sección de Música */
+.music-section {
+    padding: 4rem 2rem;
+    background: var(--secondary-color);
+    text-align: center;
+}
+
+.music-controls {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.music-controls button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-controls button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.music-controls button i {
+    font-size: 2rem;
+}
+
+/* Estilos para el audio (oculto) */
+audio {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .music-controls {
+        gap: 1rem;
+    }
+    
+    .music-controls button {
+        width: 80px;
+        height: 80px;
+    }
+}

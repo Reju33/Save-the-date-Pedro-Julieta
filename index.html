@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Especial</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tu-dominio.com/invitacion/">
+    <meta property="og:title" content="Invitación de Pedro & Julieta">
+    <meta property="og:description" content="Te invitamos a celebrar nuestro matrimonio el 10 de Mayo de 2025">
+    <meta property="og:image" content="https://tu-dominio.com/imagnes/principal.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tu-dominio.com/invitacion/">
+    <meta property="twitter:title" content="Invitación de Pedro & Julieta">
+    <meta property="twitter:description" content="Te invitamos a celebrar nuestro matrimonio el 10 de Mayo de 2025">
+    <meta property="twitter:image" content="https://tu-dominio.com/imagnes/principal.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imagnes/sello.png">
+    
+    <!-- Estilos y fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div class="invitation-container">
+        <div class="invitation-content">
+            <div class="main-section">
+                <div class="main-image">
+                    <img src="imagnes\principal.jpg" alt="Imagen principal de la boda" class="main-img">
+                </div>
+                <div class="main-content">
+                    <h1>Pedro &amp; Julieta</h1>
+                    <div class="main-date">10 de Mayo, 2025</div>
+                </div>
+            </div>
+
+            <!-- Reproductor de música -->
+            <div class="music-section">
+                <h2>Música de Fondo</h2>
+                <div class="music-controls">
+                    <button class="music-play" onclick="toggleMusic('play')">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="music-pause" onclick="toggleMusic('pause')" style="display: none;">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+                <audio id="eventMusic" src="Christina Perri - A Thousand Years [Official Music Video].mp3" loop></audio>
+            </div>
+
+            <!-- Cuenta regresiva -->
+            <div class="countdown-container">
+                <h2>Faltan</h2>
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">0</span>
+                        <span class="countdown-label">días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">0</span>
+                        <span class="countdown-label">horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">0</span>
+                        <span class="countdown-label">minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">0</span>
+                        <span class="countdown-label">segundos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historia de amor -->
+            <div class="love-story-section">
+                <h2>Nuestra Historia</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-content">
+                            <h3>Primer encuentro</h3>
+                            <p>La primera vez que nos vimos en el parque...</p>
+                            <div class="timeline-image">
+                                <img src="imagnes/love-story/1.jpg" alt="Primer encuentro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-content">
+                            <h3>Primer viaje juntos</h3>
+                            <p>Nuestro viaje a la playa...</p>
+                            <div class="timeline-image">
+                                <img src="imagnes/love-story/2.jpg" alt="Primer viaje">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3>Nuestra casa</h3>
+                            <p>El día que encontramos nuestro hogar...</p>
+                            <div class="timeline-image">
+                                <img src="imagnes/love-story/3.jpg" alt="Nuestra casa">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h3>Propuesta</h3>
+                            <p>El día más especial de nuestras vidas...</p>
+                            <div class="timeline-image">
+                                <img src="imagnes/love-story/4.jpeg" alt="Propuesta">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Familias -->
+            <div class="families-section">
+                <h2>Familias</h2>
+                <div class="families-grid">
+                    <div class="family-card">
+                        <h3>Padres de Pedro</h3>
+                        <div class="parents-images">
+                            <img src="imagnes/padres/1.jpg" alt="Padre de Pedro">
+                            
+                        </div>
+                    </div>
+                    <div class="family-card">
+                        <h3>Padres de Julieta</h3>
+                        <div class="parents-images">
+                            <img src="imagnes/padres/2.jpeg" alt="Padre de Julieta">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Damas de honor -->
+            <div class="bridesmaids-section">
+                <h2>Damas de Honor</h2>
+                <div class="bridesmaids-grid">
+                    <div class="bridesmaid-card">
+                        <img src="imagnes/damas/1.jpg" alt="Damas de honor">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Ubicación -->
+            <div class="location-section">
+                <h2>Ubicación</h2>
+                <div class="location-grid">
+                    <div class="location-card">
+                        <div class="location-content">
+                            <h3>Ceremonia Religiosa</h3>
+                            <p>Iglesia de San Juan</p>
+                            <p>León, Guanajuato</p>
+                            <div class="location-image">
+                                <img src="imagnes/iglesia.jpg" alt="Iglesia de San Juan" class="location-img">
+                            </div>
+                            <div id="church-map"></div>
+                            <button class="map-button" onclick="openGoogleMaps('church')">Ver en Google Maps</button>
+                        </div>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-content">
+                            <h3>Recepción</h3>
+                            <p>Casa de Piedra</p>
+                            <p>León, Guanajuato</p>
+                            <div class="location-image">
+                                <img src="imagnes/salon.jpg" alt="Casa de Piedra" class="location-img">
+                            </div>
+                            <div id="reception-map"></div>
+                            <button class="map-button" onclick="openGoogleMaps('reception')">Ver en Google Maps</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Música -->
+            <div class="music-section">
+                <h2>Música del Evento</h2>
+                <div class="music-content">
+                    <div class="music-description">
+                        <h3>Playlist Especial</h3>
+                        <p>Una selección de canciones que marcaron nuestro camino juntos.</p>
+                        <div class="music-controls">
+                            <button class="music-button play" onclick="toggleMusic('play')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="music-button pause" onclick="toggleMusic('pause')">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="audio-player">
+                        <audio id="eventMusic" loop>
+                            <source src="audio/Christina Perri - A Thousand Years [Official Music Video].mp3" type="audio/mpeg">
+                            <source src="audio/Reyli Barba - Casate Conmigo.mp3" type="audio/mpeg">
+                            Tu navegador no soporta audio HTML5.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programa -->
+            <div class="program-section">
+                <h2>Programa del Evento</h2>
+                <div class="timeline-vertical">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">10:00 AM</div>
+                            <h3>Ceremonia Religiosa</h3>
+                            <p>Templo de San Miguel Arcángel</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">11:30 AM</div>
+                            <h3>Sesión de Fotos</h3>
+                            <p>Parque Central</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">1:00 PM</div>
+                            <h3>Recepción y Cóctel</h3>
+                            <p>Salón de Eventos</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">3:00 PM</div>
+                            <h3>Brindis y Baile</h3>
+                            <p>Salón Principal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería -->
+            <div class="gallery-section">
+                <h2>Nuestra Historia en Imágenes</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="imagnes/Seccion-fotos/1.jpg" alt="Primer encuentro">
+                        <div class="gallery-caption">Nuestro primer encuentro</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagnes/Seccion-fotos/2.jpg" alt="Viaje a la playa">
+                        <div class="gallery-caption">Nuestro viaje a la playa</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagnes/Seccion-fotos/3.jpg" alt="Nuestra casa">
+                        <div class="gallery-caption">El día que encontramos nuestro hogar</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagnes/Seccion-fotos/4.jpg" alt="Propuesta">
+                        <div class="gallery-caption">El día más especial</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mesas de regalos -->
+            <div class="gift-section">
+                <h2>Mesas de Regalos</h2>
+                <div class="gifts-grid">
+                    <div class="gift-card">
+                        <img src="imagnes/regalo.jpg" alt="Amazon">
+                        <h3>Amazon</h3>
+                        <a href="#" class="gift-link">Ver lista</a>
+                    </div>
+                    <div class="gift-card">
+                        <img src="imagnes/regalo2.jpg" alt="Tienda Especializada">
+                        <h3>Tienda Especializada</h3>
+                        <a href="#" class="gift-link">Ver lista</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos -->
+            <div class="videos-section">
+                <h2>Videos</h2>
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <h3>Nuestro Video</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
+                                frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card">
+                        <h3>Historia de Amor</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
+                                frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensajes -->
+            <div class="messages-section">
+                <h2>Mensajes de Invitados</h2>
+                <div class="messages-grid">
+                    <div class="message-card">
+                        <p>¡Felicidades! Que sean muy felices</p>
+                        <span class="author">- María</span>
+                    </div>
+                    <div class="message-card">
+                        <p>Les deseo toda la felicidad del mundo</p>
+                        <span class="author">- Juan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="confirmation-section">
+                <h2>Confirmación de Asistencia</h2>
+                <form id="confirmation-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance">¿Asistirás?</label>
+                        <select id="attendance" required>
+                            <option value="">Selecciona</option>
+                            <option value="yes">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </div>
+
+            <!-- Reflexiones -->
+            <div class="reflections-section">
+                <h2>Reflexiones</h2>
+                <div class="reflections-grid">
+                    <div class="reflection-card">
+                        <p>"El amor es la fuerza más poderosa del mundo"</p>
+                        <span class="author">- Mahatma Gandhi</span>
+                    </div>
+                    <div class="reflection-card">
+                        <p>"El amor es la única verdad"</p>
+                        <span class="author">- Pedro & Julieta</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicatorias -->
+            <div class="dedications-section">
+                <h2>Dedicatorias</h2>
+                <div class="dedications-grid">
+                    <div class="dedication-card">
+                        <h3>A nuestros padres</h3>
+                        <p>Por su amor incondicional</p>
+                    </div>
+                    <div class="dedication-card">
+                        <h3>A nuestros amigos</h3>
+                        <p>Por estar siempre con nosotros</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Código de Vestimenta -->
+            <div class="dress-code-section">
+                <h2>Código de Vestimenta</h2>
+                <div class="dress-code-content">
+                    <div class="dress-code-item">
+                        <h3>Para Señoras</h3>
+                        <p>• Vestido de cóctel elegante</p>
+                        <p>• Tonos pastel preferidos</p>
+                        <p>• Accesorios discretos</p>
+                        <p>• Zapatos de tacón</p>
+                    </div>
+                    <div class="dress-code-item">
+                        <h3>Para Caballeros</h3>
+                        <p>• Traje oscuro</p>
+                        <p>• Camisa blanca</p>
+                        <p>• Corbata opcional</p>
+                        <p>• Zapatos de vestir</p>
+                    </div>
+                    <div class="dress-code-item">
+                        <h3>Paleta de Colores</h3>
+                        <div class="color-palette">
+                            <div class="color-box" style="background-color: #578e7e"></div>
+                            <div class="color-box" style="background-color: #f5ecd5"></div>
+                            <div class="color-box" style="background-color: #3d3d3d"></div>
+                            <div class="color-box" style="background-color: #ffffff"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="social-section">
+                <h2>Comparte tus fotos</h2>
+                <div class="social-content">
+                    <div class="social-item">
+                        <h3>Instagram</h3>
+                        <p>¡Comparte tus fotos usando el hashtag #PedroJulieta2025!</p>
+                        <a href="https://www.instagram.com/explore/tags/pedrojulieta2025/" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i> Ver fotos en Instagram
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <h3>WhatsApp</h3>
+                        <p>Envíanos tus fotos y confirmación de asistencia</p>
+                        <a href="https://wa.me/5212221234567" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enviar mensaje
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Botón de música fijo -->
+        <div class="fixed-music-button">
+            <button class="music-play" onclick="toggleMusic('play')">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="music-pause" onclick="toggleMusic('pause')">
+                <i class="fas fa-pause"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Animaciones CSS -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .slide-in {
+            animation: slideIn 1s ease-out forwards;
+        }
+    </style>
+
+    <!-- Animaciones de partículas -->
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
