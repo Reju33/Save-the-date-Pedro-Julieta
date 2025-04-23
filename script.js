@@ -1,4 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Control personalizado de música y autoplay ---
+    const audio = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-btn');
+    const musicIcon = document.getElementById('music-icon');
+
+    // PLAY/PAUSE flotante
+    if (audio && musicBtn && musicIcon) {
+        function updateMusicIcon() {
+            if (audio.paused) {
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-play');
+            } else {
+                musicIcon.classList.remove('fa-play');
+                musicIcon.classList.add('fa-pause');
+            }
+        }
+        updateMusicIcon();
+        musicBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+        audio.addEventListener('play', updateMusicIcon);
+        audio.addEventListener('pause', updateMusicIcon);
+    }
+
+    // Autoplay robusto
+    if (audio) {
+        audio.play().catch(() => {
+            // Si falla, intentamos reproducir al primer clic/tap
+            const startMusic = () => {
+                audio.play();
+                document.removeEventListener('click', startMusic);
+                document.removeEventListener('touchstart', startMusic);
+            };
+            document.addEventListener('click', startMusic);
+            document.addEventListener('touchstart', startMusic);
+        });
+    }
+
     // Configuración de partículas
     particlesJS('particles-js', {
         particles: {
@@ -56,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reproductor de YouTube
     const player = new YT.Player('youtube-player', {
-        videoId: 'https://www.youtube.com/watch?v=8xg3vE8Ie_E&list=RD8xg3vE8Ie_E&start_radio=1', // Reemplaza con el ID de tu video de YouTube
+        videoId: '8xg3vE8Ie_E', // Reemplaza con el ID de tu video de YouTube
         playerVars: {
             autoplay: 1,
             mute: 1,
@@ -64,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showinfo: 0,
             rel: 0,
             loop: 1,
-            playlist: 'VIDEO_ID' // Reemplaza con el ID de tu video
+            playlist: '8xg3vE8Ie_E' // Reemplaza con el ID de tu video
         },
         events: {
             'onReady': onPlayerReady
@@ -190,38 +232,4 @@ document.addEventListener('DOMContentLoaded', () => {
         container.style.opacity = '1';
         container.style.transform = 'scale(1)';
     }, 100);
-
-    // Función para controlar la música
-    function toggleMusic(action) {
-        const audio = document.getElementById('eventMusic');
-        const playButton = document.querySelector('.music-play');
-        const pauseButton = document.querySelector('.music-pause');
-
-        if (action === 'play') {
-            audio.play().catch(() => {
-                // Si falla la reproducción automática, mostrar el botón de play
-                playButton.style.display = 'block';
-                pauseButton.style.display = 'none';
-            });
-            playButton.style.display = 'none';
-            pauseButton.style.display = 'block';
-        } else {
-            audio.pause();
-            playButton.style.display = 'block';
-            pauseButton.style.display = 'none';
-        }
-    }
-
-    // Iniciar la música al cargar la página
-    document.addEventListener('DOMContentLoaded', () => {
-        const audio = document.getElementById('eventMusic');
-        audio.volume = 0.5; // Volumen inicial al 50%
-        
-        // Intentar reproducir automáticamente
-        audio.play().catch(() => {
-            // Si falla, mostrar el botón de play
-            document.querySelector('.music-play').style.display = 'block';
-            document.querySelector('.music-pause').style.display = 'none';
-        });
-    });
 });

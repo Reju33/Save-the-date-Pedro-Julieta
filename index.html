@@ -27,8 +27,16 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="music-float-btn.css" />
 </head>
 <body>
+    <audio id="bg-music" src="canciones/2.mp3" autoplay loop style="display:none;"></audio>
+
+<!-- Botón flotante de música -->
+<button id="music-btn" class="music-float-btn" aria-label="Play/Pause música">
+  <i id="music-icon" class="fas fa-play"></i>
+</button>
+
     <div class="invitation-container">
         <div class="invitation-content">
             <div class="main-section">
@@ -39,20 +47,6 @@
                     <h1>Pedro &amp; Julieta</h1>
                     <div class="main-date">10 de Mayo, 2025</div>
                 </div>
-            </div>
-
-            <!-- Reproductor de música -->
-            <div class="music-section">
-                <h2>Música de Fondo</h2>
-                <div class="music-controls">
-                    <button class="music-play" onclick="toggleMusic('play')">
-                        <i class="fas fa-play"></i>
-                    </button>
-                    <button class="music-pause" onclick="toggleMusic('pause')" style="display: none;">
-                        <i class="fas fa-pause"></i>
-                    </button>
-                </div>
-                <audio id="eventMusic" src="Christina Perri - A Thousand Years [Official Music Video].mp3" loop></audio>
             </div>
 
             <!-- Cuenta regresiva -->
@@ -185,32 +179,6 @@
                             <div id="reception-map"></div>
                             <button class="map-button" onclick="openGoogleMaps('reception')">Ver en Google Maps</button>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Música -->
-            <div class="music-section">
-                <h2>Música del Evento</h2>
-                <div class="music-content">
-                    <div class="music-description">
-                        <h3>Playlist Especial</h3>
-                        <p>Una selección de canciones que marcaron nuestro camino juntos.</p>
-                        <div class="music-controls">
-                            <button class="music-button play" onclick="toggleMusic('play')">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <button class="music-button pause" onclick="toggleMusic('pause')">
-                                <i class="fas fa-pause"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="audio-player">
-                        <audio id="eventMusic" loop>
-                            <source src="audio/Christina Perri - A Thousand Years [Official Music Video].mp3" type="audio/mpeg">
-                            <source src="audio/Reyli Barba - Casate Conmigo.mp3" type="audio/mpeg">
-                            Tu navegador no soporta audio HTML5.
-                        </audio>
                     </div>
                 </div>
             </div>
@@ -439,16 +407,6 @@
                 </div>
             </div>
         </div>
-        <!-- Botón de música fijo -->
-        <div class="fixed-music-button">
-            <button class="music-play" onclick="toggleMusic('play')">
-                <i class="fas fa-play"></i>
-            </button>
-            <button class="music-pause" onclick="toggleMusic('pause')">
-                <i class="fas fa-pause"></i>
-            </button>
-        </div>
-    </div>
 
     <!-- Animaciones CSS -->
     <style>

@@ -1,0 +1,31 @@
+/* Botón flotante de música personalizado */
+.music-float-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary-color, #578e7e);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.music-float-btn:hover {
+  background: #e7f6ef;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(87,142,126,0.15);
+}
+.music-float-btn:active {
+  background: #c3e4d7;
+}
+#music-icon {
+  pointer-events: none;
+}
